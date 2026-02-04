@@ -1,0 +1,40 @@
+.contact {
+  padding: 5rem 4rem;
+  text-align: center;
+}
+
+.contact h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.contact p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: var(--secondary-text);
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  transition: all 0.3s ease;
+  border: 1px solid var(--accent);
+}
+
+.contact-button:hover {
+  background: var(--accent);
+  color: var(--bg-color);
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 3rem 2rem;
+  }
+
+  .contact-button {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
