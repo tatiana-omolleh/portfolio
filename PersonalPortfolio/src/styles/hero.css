@@ -1,14 +1,17 @@
 .hero {
   min-height: 100vh;
-  padding: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1.2rem;
+  align-items: center; /* Centered */
+  text-align: center;  /* Centered */
+  gap: 1.5rem;
+  background: radial-gradient(circle at center, var(--card-bg) 0%, var(--bg-color) 100%);
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 4rem;
+  letter-spacing: -1px;
 }
 
 .hero h2 {
@@ -23,19 +26,23 @@
 
 .hero-buttons {
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 1.2rem;
+  margin-top: 2rem;
 }
 
 .hero-buttons a {
-  padding: 0.6rem 1.2rem;
-  border: 1px solid #26ab9f;
-  transition: all 0.3s ease;
+  padding: 0.8rem 2rem;
+  border-radius: 50px; /* Pill shape */
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.19);
 }
 
 .hero-buttons a:hover {
-  background: var(--accent);
-  color: var(--bg-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 118, 255, 0.23);
 }
 
 .hero-buttons .secondary {

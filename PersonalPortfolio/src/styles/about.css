@@ -8,7 +8,7 @@
 .about h3 {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  color: #26ab9f;
+  color: var(--accent);
 }
 
 .about p {
