@@ -1,34 +1,59 @@
+/* ─── Footer ─── */
 .footer {
-  padding: 2rem;
+  padding: 3rem 2rem;
   border-top: 1px solid var(--border-color);
-  text-align: center;
 }
 
-.socials {
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.footer-socials a {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 0.8rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  color: var(--secondary-text);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  transition: all 0.25s ease;
 }
 
-.socials a {
-  color: #888;
-  font-size: 0.9rem;
-  transition: color 0.3s ease;
+.footer-socials a:hover {
+  border-color: var(--accent);
+  background: var(--surface-hover);
+  box-shadow: 0 4px 15px var(--accent-glow);
 }
 
-.socials a:hover {
-  color: var(--accent);
+.footer-divider {
+  width: 50px;
+  height: 2px;
+  border-radius: 1px;
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+  opacity: 0.5;
 }
 
-.footer p {
-  font-size: 0.8rem;
-  color: #555;
+.footer-copy {
+  font-size: 0.85rem;
+  color: var(--secondary-text);
 }
 
-@media (max-width: 480px) {
-  .socials {
-    flex-direction: column;
-    gap: 0.6rem;
-  }
+.footer-name {
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
