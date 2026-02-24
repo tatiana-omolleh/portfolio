@@ -1,34 +1,161 @@
+/* ─── Hero Section ─── */
 .hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  gap: 3rem;
+  padding: 6rem 2rem 2rem;
+  overflow: hidden;
 }
 
+/* ─── Animated gradient blobs ─── */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  will-change: transform;
+}
+
+[data-theme="dark"] .blob {
+  opacity: 0.18;
+}
+
+.blob-1 {
+  width: 500px;
+  height: 500px;
+  background: var(--gradient-start);
+  top: -10%;
+  left: -5%;
+  animation: float-1 14s ease-in-out infinite;
+}
+
+.blob-2 {
+  width: 400px;
+  height: 400px;
+  background: var(--gradient-end);
+  bottom: -5%;
+  right: -5%;
+  animation: float-2 12s ease-in-out infinite;
+}
+
+.blob-3 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  top: 40%;
+  left: 50%;
+  animation: float-3 16s ease-in-out infinite;
+}
+
+@keyframes float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(60px, 40px) scale(1.1); }
+  66% { transform: translate(-30px, 60px) scale(0.95); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-50px, -30px) scale(1.05); }
+  66% { transform: translate(40px, -50px) scale(0.9); }
+}
+
+@keyframes float-3 {
+  0%, 100% { transform: translate(-50%, 0) scale(1); }
+  50% { transform: translate(-50%, -40px) scale(1.15); }
+}
+
+/* ─── Floating particles ─── */
+.particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  bottom: -10px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: rise linear infinite;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* ─── Content ─── */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* ─── Terminal ─── */
 .terminal-container {
   width: 100%;
   max-width: 650px;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 20px 60px -15px rgba(0, 0, 0, 0.15),
+    0 0 0 1px var(--border-color);
+  backdrop-filter: blur(12px);
+}
+
+[data-theme="dark"] .terminal-container {
+  box-shadow:
+    0 20px 60px -15px rgba(0, 0, 0, 0.5),
+    0 0 40px var(--accent-glow);
 }
 
 .terminal-header {
   background: var(--border-color);
-  padding: 10px 15px;
+  padding: 10px 16px;
   display: flex;
+  align-items: center;
   gap: 8px;
-  opacity: 0.8;
+}
+
+.terminal-title {
+  margin-left: auto;
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--secondary-text);
+  opacity: 0.7;
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
 }
 
@@ -39,14 +166,14 @@
 .terminal-body {
   padding: 2rem;
   font-family: var(--font-mono);
-  font-size: 1.1rem;
-  line-height: 1.8;
-  text-align: left; /* Ensure text isn't centered inside the box */
-  min-height: 300px;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  text-align: left;
+  min-height: 280px;
 }
 
 .terminal-line {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .terminal-line.command {
@@ -56,24 +183,25 @@
 
 .terminal-line.command::before {
   content: "> ";
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .terminal-line.output {
-  color: var(--secondary-text); /* Use the softer slate color for outputs */
+  color: var(--secondary-text);
   padding-left: 1.2rem;
-  margin-bottom: 1.2rem;
-  display: block; /* Ensure it stays on its own line */
+  margin-bottom: 1rem;
+  display: block;
 }
 
 /* Blinking Cursor */
 .terminal-cursor {
   display: inline-block;
-  width: 8px;
-  height: 1.2rem;
+  width: 9px;
+  height: 1.15rem;
   background: var(--accent);
   margin-left: 4px;
   vertical-align: middle;
+  border-radius: 1px;
   animation: blink 1s step-end infinite;
 }
 
@@ -82,89 +210,41 @@
   50% { opacity: 0; }
 }
 
+/* ─── CTA buttons ─── */
 .hero-actions {
   display: flex;
-  gap: 1.5rem;
-}
-
-@media (max-width: 768px) {
-  .terminal-body {
-    font-size: 0.95rem;
-    padding: 1.5rem;
-  }
-}
-
-.hero h1 {
-  font-size: 4rem;
-  letter-spacing: -1px;
-}
-
-.hero h2 {
-  font-weight: 400;
-  color: var(--accent);
-}
-
-.hero p {
-  max-width: 500px;
-  color: var(--secondary-text);
-}
-
-.hero-buttons {
-  display: flex;
   gap: 1.2rem;
-  margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.hero-buttons a {
-  padding: 0.8rem 2rem;
-  border-radius: 50px; /* Pill shape */
-  font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background: var(--accent);
-  color: white;
-  box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.19);
-}
-
-.hero-buttons a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 118, 255, 0.23);
-}
-
-.hero-buttons .secondary {
-  border-color: #555;
-}
-
+/* ─── Responsive ─── */
 @media (max-width: 768px) {
   .hero {
-    padding: 2rem;
-    text-align: center;
+    padding: 5rem 1.5rem 2rem;
   }
 
-  .hero h1 {
-    font-size: 2.2rem;
+  .terminal-body {
+    font-size: 0.9rem;
+    padding: 1.5rem;
+    min-height: 240px;
   }
 
-  .hero h2 {
-    font-size: 1.1rem;
-  }
-
-  .hero p {
-    margin: 0 auto;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  .blob-1 { width: 300px; height: 300px; }
+  .blob-2 { width: 250px; height: 250px; }
+  .blob-3 { width: 200px; height: 200px; }
 }
 
 @media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.9rem;
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
   }
 
-  .hero-buttons a {
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
     width: 100%;
-    text-align: center;
+    justify-content: center;
   }
 }
