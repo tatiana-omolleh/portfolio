@@ -25,15 +25,15 @@ function Contact() {
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
     const notificationTemplate = import.meta.env.VITE_EMAILJS_TEMPLATE_ID_NOTIFICATION;
-    const replyTemplate = import.meta.env.VITE_EMAILJS_TEMPLATE_ID_REPLY;
+    // const replyTemplate = import.meta.env.VITE_EMAILJS_TEMPLATE_ID_REPLY;
 
     try {
       await emailjs.sendForm(serviceId, notificationTemplate, form.current, {
         publicKey,
       });
-      await emailjs.sendForm(serviceId, replyTemplate, form.current, {
-        publicKey,
-      });
+      // await emailjs.sendForm(serviceId, replyTemplate, form.current, {
+      //   publicKey,
+      // });
 
       setStatus("Message sent successfully!");
       setSubject("");
