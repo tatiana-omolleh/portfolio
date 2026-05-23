@@ -4,7 +4,7 @@ import "../styles/theme-toggle.css";
 
 function ThemeToggle() {
   const [theme, setTheme] = useState(
-    localStorage.getItem("theme") || "dark"
+    localStorage.getItem("theme") || "light"
   );
 
   useEffect(() => {
