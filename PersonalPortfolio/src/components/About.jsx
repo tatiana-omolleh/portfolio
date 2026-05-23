@@ -19,16 +19,15 @@ function About() {
       <div className="about-content">
         <div className="about-text">
           <p>
-            I'm a Computer Science student with a strong interest in full-stack
-            development and AI-powered systems. I enjoy building applications
-            that solve real problems and combine clean user interfaces with
-            intelligent backend logic.
+            Software engineer, almost-graduate, and firm believer that the best
+            products come from genuinely caring about the people who use them. I
+            build full-stack systems and AI-powered tools — the kind that solve
+            real problems and actually scale.
           </p>
           <p>
-            I've worked with technologies like React, Django, and Python, and
-            I'm especially interested in machine learning and scalable web
-            applications. I'm always looking to push my skills further and
-            contribute to meaningful projects.
+            Off-screen, I'm chasing hidden gems in whatever city I'm in, hunting
+            for the perfect matcha, traveling to meet new people, and occasionally
+            terrorising my kitchen in the name of baking.
           </p>
         </div>
 

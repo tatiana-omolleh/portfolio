@@ -23,7 +23,9 @@ function Hero() {
       { type: "command", text: "role" },
       { type: "output", text: "Software Engineer | AI Engineer" },
       { type: "command", text: "interests" },
-      { type: "output", text: "Applied AI, ML systems, scalable products" },
+      { type: "output", text: "Applied AI, ML systems, Sustainability" },
+      { type: "command", text: "currently" },
+      { type: "output", text: "Stockholm, Sweden" },
     ];
 
     let currentLine = 0;
