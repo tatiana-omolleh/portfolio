@@ -4,27 +4,27 @@ import "../styles/projects.css";
 
 const projects = [
   {
-    title: "Kazini",
+    title: "Kazìni",
     description:
-      "An AI-powered career planning and mentorship platform using machine learning to recommend career paths and internships.",
-    tech: ["Django", "React", "Machine Learning", "MySQL"],
-    github: "https://github.com/yourusername/kazini",
+      "An AI-powered career mentorship platform that combines Machine Learning (Cosine Similarity) and domain logic to recommend realistic career paths, analyze skill gaps, and match students with internships.",
+    tech: ["React", "Django", "Scikit-Learn", "Gemini API"],
+    github: "https://github.com/tatiana-omolleh/Intelligent-Career-Planning-Platform",
     demo: "",
   },
   {
-    title: "ML Recommendation System",
+    title: "TikitiLeo",
     description:
-      "A machine learning project that analyzes unstructured data to generate personalized recommendations.",
-    tech: ["Python", "Scikit-learn", "Pandas"],
-    github: "https://github.com/yourusername/ml-project",
+      "An event ticketing web application designed to increase accessibility by allowing users to purchase tickets using flexible payment options and installment plans.",
+    tech: ["Laravel", "PHP", "MySQL"],
+    github: "https://github.com/tatiana-omolleh/tikitileo",
     demo: "",
   },
   {
-    title: "Meeting Scheduler",
+    title: "Careers Management System",
     description:
-      "A full-stack scheduling application with calendar integration and authentication.",
-    tech: ["Django", "React", "REST API"],
-    github: "https://github.com/yourusername/scheduler",
+      "Led the end-to-end development of a platform to digitize admissions, alumni engagement, and internship tracking. Streamlined manual processes to reduce administrative workload by 40%.",
+    tech: ["React", "Django", "SQL", "Google Meet API"],
+    github: "", 
     demo: "",
   },
 ];
