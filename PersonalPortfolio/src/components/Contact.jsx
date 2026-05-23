@@ -16,7 +16,6 @@ const fadeUp = {
 function Contact() {
   const form = useRef();
   const [status, setStatus] = useState("");
-  const [subject, setSubject] = useState("");
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -25,18 +24,13 @@ function Contact() {
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
     const notificationTemplate = import.meta.env.VITE_EMAILJS_TEMPLATE_ID_NOTIFICATION;
-    // const replyTemplate = import.meta.env.VITE_EMAILJS_TEMPLATE_ID_REPLY;
 
     try {
       await emailjs.sendForm(serviceId, notificationTemplate, form.current, {
         publicKey,
       });
-      // await emailjs.sendForm(serviceId, replyTemplate, form.current, {
-      //   publicKey,
-      // });
 
       setStatus("Message sent successfully!");
-      setSubject("");
       form.current.reset();
     } catch (error) {
       setStatus("Failed to send message. Please try again.");
@@ -53,7 +47,7 @@ function Contact() {
       </p>
 
       <form ref={form} onSubmit={sendEmail} className="contact-form">
-        {["name", "email", "subject", "message"].map((field, i) => (
+        {["name", "email", "message"].map((field, i) => (
           <motion.div
             className="form-group"
             key={field}
@@ -70,18 +64,6 @@ function Contact() {
                 rows="5"
                 required
               />
-            ) : field === "subject" ? (
-              <>
-                <input
-                  type="text"
-                  name="subject"
-                  placeholder="Subject"
-                  value={subject}
-                  onChange={(e) => setSubject(e.target.value)}
-                  required
-                />
-                <input type="hidden" name="title" value={subject} />
-              </>
             ) : (
               <input
                 type={field === "email" ? "email" : "text"}
