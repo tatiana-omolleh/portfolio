@@ -23,7 +23,7 @@ const skillCategories = [
         <rect x="3" y="14" width="7" height="7" />
       </svg>
     ),
-    skills: ["React", "Django", "REST APIs", "Node.js", "Vite"],
+    skills: ["React.js", "Django", "REST APIs", "Vite"],
   },
   {
     title: "AI / ML",
@@ -35,7 +35,7 @@ const skillCategories = [
         <path d="M8 16h8" />
       </svg>
     ),
-    skills: ["Scikit-learn", "Pandas", "NumPy", "TensorFlow", "NLP"],
+    skills: ["Scikit-learn", "Pandas", "NumPy", "TensorFlow"],
   },
   {
     title: "Tools & DevOps",
@@ -44,7 +44,7 @@ const skillCategories = [
         <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
       </svg>
     ),
-    skills: ["Git", "Docker", "MySQL", "PostgreSQL", "Linux"],
+    skills: ["Git", "Docker", "MySQL"],
   },
 ];
 
