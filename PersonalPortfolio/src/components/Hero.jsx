@@ -25,7 +25,7 @@ function Hero() {
       { type: "command", text: "interests" },
       { type: "output", text: "Applied AI, ML systems, Sustainability" },
       { type: "command", text: "currently" },
-      { type: "output", text: "Stockholm, Sweden" },
+      { type: "output", text: "Nairobi, Kenya" },
     ];
 
     let currentLine = 0;
